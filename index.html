@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Event Registration</h1>
+            <p class="subtitle">Register for our amazing event</p>
+            
+            <form id="registrationForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                    <span class="error-message" id="fullNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="Enter your phone number"
+                        required
+                    >
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType">Event Type *</label>
+                    <select id="eventType" name="eventType" required>
+                        <option value="">Select an event</option>
+                        <option value="conference">Conference</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="seminar">Seminar</option>
+                        <option value="networking">Networking Event</option>
+                    </select>
+                    <span class="error-message" id="eventTypeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="attendees">Number of Attendees *</label>
+                    <input 
+                        type="number" 
+                        id="attendees" 
+                        name="attendees" 
+                        min="1" 
+                        max="10"
+                        placeholder="1"
+                        required
+                    >
+                    <span class="error-message" id="attendeesError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company/Organization</label>
+                    <input 
+                        type="text" 
+                        id="company" 
+                        name="company" 
+                        placeholder="Enter your company name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Any special requirements or questions?"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input 
+                        type="checkbox" 
+                        id="terms" 
+                        name="terms" 
+                        required
+                    >
+                    <label for="terms">I agree to the terms and conditions *</label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Register Now</button>
+                <button type="reset" class="reset-btn">Clear Form</button>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h2>Registration Successful!</h2>
+                <p>Thank you for registering. We'll send you confirmation details shortly.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
